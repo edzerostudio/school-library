@@ -14,7 +14,7 @@ School Library is a simple web to manage your books!
 ## How To
 
 `composer install`\
-`php artisan migrate`\ 
+`php artisan migrate`\
 `php artisan serve` 
 
 ## Contributing
