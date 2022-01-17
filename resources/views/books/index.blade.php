@@ -80,7 +80,7 @@
                                 </span>
                             @endif
                         </div>
-                        <div class="mb-3 form-group{{ $errors->has('role') ? ' has-danger' : '' }}"">
+                        <div class="mb-3 form-group{{ $errors->has('author_id') ? ' has-danger' : '' }}"">
                             <label for="author_id" class="form-label">Author</label>
                             <select class="form-select" aria-label="default" id="author_id" name="author_id" >
                                 <option value="">{{ __('Select Author') }}</option>
@@ -181,10 +181,10 @@
                     </span>
                 @endif
             </div>
-            <div class="mb-3 form-group{{ $errors->has('role') ? ' has-danger' : '' }}"">
-                <label for="author_id" class="form-label">Role</label>
+            <div class="mb-3 form-group{{ $errors->has('author_id') ? ' has-danger' : '' }}"">
+                <label for="author_id" class="form-label">Author</label>
                 <select class="form-select" aria-label="default" id="author_id" name="author_id" >
-                    <option value="">{{ __('Select Role') }}</option>
+                    <option value="">{{ __('Select Author') }}</option>
                     @foreach($authors as $author)
                     <option value="{{ $author->id }}">{{ $author->name }}</option>
                     @endforeach
