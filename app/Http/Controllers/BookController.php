@@ -58,13 +58,9 @@ class BookController extends Controller
      */
     public function update(BookRequest $request, Book $book)
     {
-        if ($book->id == 1) {
-            return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
-        }
-
         $book->update($request->all());
 
-        return back()->withStatus(__('Profile successfully updated.'));
+        return back()->withStatus(__('Book successfully updated.'));
     }
 
     /**
@@ -75,10 +71,6 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        if ($book->id == 1) {
-            return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
-        }
-
         $book->delete();
 
         return back()->withUserStatus(__('Book successfully deleted.'));

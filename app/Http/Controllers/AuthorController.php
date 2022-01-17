@@ -56,13 +56,9 @@ class AuthorController extends Controller
      */
     public function update(AuthorRequest $request, Author $author)
     {
-        if ($author->id == 1) {
-            return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
-        }
-
         $author->update($request->all());
 
-        return back()->withStatus(__('Profile successfully updated.'));
+        return back()->withStatus(__('Author successfully updated.'));
     }
 
     /**
@@ -73,10 +69,6 @@ class AuthorController extends Controller
      */
     public function destroy(Author $author)
     {
-        if ($author->id == 1) {
-            return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
-        }
-
         $author->delete();
 
         return back()->withUserStatus(__('Author successfully deleted.'));
